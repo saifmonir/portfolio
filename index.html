@@ -17,6 +17,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <nav class="main-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#qualification">Qualification</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <header class="site-header">
       <div class="cover-photo" aria-label="Cover banner"></div>
       <div class="header-inner container">
@@ -33,20 +49,6 @@
             <p class="workplace">Currently at Northstar Studio</p>
           </div>
         </div>
-
-        <nav class="main-nav" aria-label="Main navigation">
-          <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <ul class="nav-links">
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#qualification">Qualification</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
       </div>
     </header>
 
@@ -201,26 +203,29 @@
           </ul>
         </div>
 
-        <form class="contact-form">
+        <form class="contact-form" action="send-email.php" method="post" id="contact-form">
           <h4>Contact Me</h4>
+
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+
           <div class="form-row">
-            <label for="name">Name</label>
-            <input id="name" type="text" name="name" placeholder="Your name" />
+            <label for="full_name">Full Name</label>
+            <input id="full_name" type="text" name="full_name" placeholder="Your full name" required />
           </div>
 
           <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" placeholder="Your email" />
+            <label for="email">Email Address</label>
+            <input id="email" type="email" name="email" placeholder="Your email address" required />
           </div>
 
           <div class="form-row">
             <label for="subject">Subject</label>
-            <input id="subject" type="text" name="subject" placeholder="Subject" />
+            <input id="subject" type="text" name="subject" placeholder="Subject" required />
           </div>
 
           <div class="form-row">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your message here"></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
           </div>
 
           <button type="submit">Send Message</button>
